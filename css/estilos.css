@@ -4,6 +4,7 @@
     --color-blanco: #ffffff;
     --color-imagen-centro: #82c3a6;
     --color-imagen-secundaria: #d5c75f;
+    --color-footer: #C6d5c5;
     --fuente-principal: 'Dancing Script', cursive;
 }
 
@@ -127,6 +128,44 @@ img {
 
 /* ----------------------------- */
 
+/* footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+    padding: 12vw;
+    border-radius: 0 0 10px 10px;
+    background-color: var(--color-footer);
+}
+
+.footer__redes-sociales span {
+    display: block;
+}
+
+.footer__contacto,
+.footer__terminos,
+.footer__redes-sociales {
+    margin-bottom: 2rem;
+}
+
+/* ------------------------ Pagina paisajes ------------------------- */
+
+#contenidoPrincipal .imagen-1 {
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+}
+
+#contenidoPrincipal .imagen-3 {
+    -webkit-filter: sepia(90%);
+    filter: sepia(90%);
+}
+
+#contenidoPrincipal .imagen-2,
+#contenidoPrincipal .imagen-4,
+#contenidoPrincipal .imagen-6 {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
 
 /* media queries */
 
@@ -158,4 +197,35 @@ img {
     .contenidoPrincipal__secundario figure:first-of-type {
         margin-right: 3vw;
     }
+
+    /* footer */
+    .footer {
+        flex-direction: row;
+        padding: 3vw;
+    }
+    .footer .footer__titulo {
+        margin-bottom: .2rem;
+    }
+    .footer__contacto,
+    .footer__terminos,
+    .footer__redes-sociales,
+    .footer__derechos {
+        margin-bottom: 0;
+        width: 25%;
+    }
+
+      /* paginas retratos y paisajes */
+      #contenidoPrincipal.retratos,
+      #contenidoPrincipal.paisajes {
+          display: grid;
+          grid-template-rows: repeat(2, auto);
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 1vw 2vw;
+          padding: 1vw;
+      }
+
+      #contenidoPrincipal .contenidoPrincipal__secundario.retrato,
+      #contenidoPrincipal .contenidoPrincipal__secundario.paisaje {
+          padding: 0;
+      }
 }
