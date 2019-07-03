@@ -2,6 +2,8 @@
     --color-fondo: #02010a;
     --color-cabecera: #5b7989;
     --color-blanco: #ffffff;
+    --color-imagen-centro: #82c3a6;
+    --color-imagen-secundaria: #d5c75f;
     --fuente-principal: 'Dancing Script', cursive;
 }
 
@@ -30,6 +32,7 @@ img {
     width: 100%;
     max-width: 100%;
     height: auto;
+    display: block;
 }
 
 /* ------------------------ */
@@ -69,6 +72,62 @@ img {
     color: var(--color-blanco);
 }
 
+/* contenido centro */
+
+/* figure {
+    font-size: 0;
+} */
+
+#contenidoPrincipal {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-imagen-centro);
+}
+
+#contenidoPrincipal .contenidoPrincipal__centro {
+    background-color: var(--color-imagen-centro);
+    text-align: center;
+    padding: 3vw;
+}
+
+.contenidoPrincipal__centro {
+    width: 90%;
+    margin-left: 5%;
+}
+
+#contenidoPrincipal .contenidoPrincipal__secundario {
+    background-color: var(--color-imagen-secundaria);
+    padding: 3vw;
+}
+
+.contenidoPrincipal__secundario figure img {
+    border: 1px solid;
+}
+
+.contenidoPrincipal__secundario figure:first-of-type img,
+.contenidoPrincipal__secundario figure:last-of-type img {
+    transition: all .5s;
+}
+
+.contenidoPrincipal__secundario figure:first-of-type:hover img {
+    transform: rotate(10deg);
+    box-shadow: 2px 2px 2px var(--color-imagen-centro);
+}
+
+.contenidoPrincipal__secundario figure:last-of-type:hover img {
+    transform: translate(20px, -5px);
+    box-shadow: 2px 2px 2px var(--color-imagen-centro);
+}
+
+.contenidoPrincipal__secundario figcaption {
+    margin-bottom: 2rem;
+    text-align: center;
+    text-decoration: underline;
+}
+
+/* ----------------------------- */
+
+
 /* media queries */
 
 @media screen and (min-width: 900px) {
@@ -90,5 +149,13 @@ img {
     }
     .navegacion .navegacion__item:last-of-type {
         margin-right: 0;
+    }
+
+    /* ---- */
+    .contenidoPrincipal__secundario {
+        display: flex;
+    }
+    .contenidoPrincipal__secundario figure:first-of-type {
+        margin-right: 3vw;
     }
 }
