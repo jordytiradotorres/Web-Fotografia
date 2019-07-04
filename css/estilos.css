@@ -36,6 +36,25 @@ img {
     display: block;
 }
 
+a.active {
+    text-decoration: none;
+}
+
+/* animacion slidein */
+
+@keyframes slidein {
+    0% {
+        margin-top: 150%;
+    }
+    60% {
+        margin-top: -5%;
+    }
+    100% {
+        margin-top: 0;
+    }
+}
+
+
 /* ------------------------ */
 
 #contenido {
@@ -44,6 +63,9 @@ img {
 }
 
 .cabecera {
+    animation-name: slidein;
+    animation-timing-function: linear;
+    animation-duration: .8s;
     display: flex;
     flex-wrap: wrap;
     padding: 1rem 0 .5rem 0;
@@ -72,12 +94,6 @@ img {
 .navegacion .navegacion__link {
     color: var(--color-blanco);
 }
-
-/* contenido centro */
-
-/* figure {
-    font-size: 0;
-} */
 
 #contenidoPrincipal {
     display: flex;
@@ -220,8 +236,8 @@ img {
           display: grid;
           grid-template-rows: repeat(2, auto);
           grid-template-columns: repeat(3, 1fr);
-          grid-gap: 1vw 2vw;
-          padding: 1vw;
+          grid-gap: 3vw;
+          padding: 1.5vw;
       }
 
       #contenidoPrincipal .contenidoPrincipal__secundario.retrato,
